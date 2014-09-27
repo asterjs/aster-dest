@@ -1,6 +1,6 @@
 {
   "name": "aster-dest",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "File writer for aster.",
   "author": "Ingvar Stepanyan <me@rreverser.com> (https://github.com/RReverser)",
   "repository": "asterjs/aster-dest",
