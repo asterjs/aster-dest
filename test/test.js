@@ -30,11 +30,16 @@ it('test', function (done) {
 				contents: '{"version":3,"sources":["file.js"],"names":["a"],"mappings":"AAAmB;AAAAA,CAAA,GAAE,CAAF"}'
 			}
 		];
+	var index = 0;
 
 	// simulating file sequence and applying transformation
 	dest('.tmp', {comment: true, sourceMap: true})(Rx.Observable.fromArray(input))
 	// checking against array of expected results iteratively
-	.zip(expected, assert.deepEqual)
+	// .zip(expected, assert.deepEqual)
+	.do(function (file) {
+		assert.deepEqual(file, expected[index++]);
+	})
+
 	// subscribing to check results
 	.subscribe(function () {}, done, done);
 });
